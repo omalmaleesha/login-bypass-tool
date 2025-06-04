@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple HTTP server for the Client-Side Authentication Security Lab
-Serves static files and provides a convenient way to run the lab
+HTTP server for SecureBank Security Demonstration System
 """
 
 import http.server
@@ -40,23 +39,20 @@ def start_server(port=8000, open_browser=True):
     
     try:
         with socketserver.TCPServer(("", port), CustomHTTPRequestHandler) as httpd:
-            print(f"🚀 SecureBank Security Lab Server Starting...")
-            print(f"📁 Serving files from: {script_dir}")
-            print(f"🌐 Server running at: http://localhost:{port}")
-            print(f"📖 Open the reverse engineering guide: reverse-engineering-guide.md")
-            print(f"🐍 Run the bypass script: python bypass_automation.py")
-            print(f"⚠️  Remember: This is for educational purposes only!")
-            print(f"🛑 Press Ctrl+C to stop the server")
-            print("-" * 60)
+            print(f"SecureBank Security Demo Server")
+            print(f"Serving from: {script_dir}")
+            print(f"URL: http://localhost:{port}")
+            print(f"Demo Access: http://localhost:{port}/demo-access.html")
+            print(f"Press Ctrl+C to stop")
+            print("-" * 50)
             
             if open_browser:
-                print("🔍 Opening browser...")
-                webbrowser.open(f'http://localhost:{port}')
+                webbrowser.open(f'http://localhost:{port}/demo-access.html')
             
             httpd.serve_forever()
             
     except KeyboardInterrupt:
-        print("\n🛑 Server stopped by user")
+        print("\nServer stopped")
     except OSError as e:
         if e.errno == 48:  # Address already in use
             print(f"❌ Error: Port {port} is already in use")
