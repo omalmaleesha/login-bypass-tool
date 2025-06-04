@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank Security Demonstration System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 40px;
+            background: #2d2d2d;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #888;
+            font-size: 1.1em;
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .phase-item {
+            background: #3a3a3a;
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .phase-item:hover {
+            background: #404040;
+            border-color: #ff6b6b;
+            transform: translateY(-2px);
+        }
+
+        .phase-title {
+            color: #ff6b6b;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .phase-description {
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .phase-techniques {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .phase-techniques li {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .phase-techniques li:before {
+            content: "▸";
+            color: #ff6b6b;
+            position: absolute;
+            left: 0;
+        }
+
+        .phase-link {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .phase-link:hover {
+            background: #ff5252;
+        }
+
+        .tools-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #444;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tool-item {
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .tool-name {
+            color: #4fc3f7;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .tool-description {
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .disclaimer {
+            background: #2c1810;
+            border: 1px solid #8d4e00;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 30px;
+            color: #ffb74d;
+        }
+
+        .disclaimer strong {
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏦 SecureBank Security Demo</h1>
+            <p>Advanced Client-Side Security Vulnerability Demonstration System</p>
+        </div>
+
+        <div class="disclaimer">
+            <strong>⚠️ Security Research System</strong><br>
+            This system demonstrates advanced client-side security vulnerabilities and bypass techniques. 
+            Use only on systems you own or have explicit authorization to test.
+        </div>
+
+        <div class="phase-grid">
+            <div class="phase-item">
+                <div class="phase-title">Phase 0: Basic Authentication</div>
+                <div class="phase-description">
+                    Fundamental client-side authentication vulnerabilities with basic obfuscation techniques.
+                </div>
+                <ul class="phase-techniques">
+                    <li>Base64/ROT13 encoding</li>
+                    <li>Hardcoded credentials</li>
+                    <li>SHA-256 hash validation</li>
+                    <li>Session storage manipulation</li>
+                </ul>
+                <a href="index.html" class="phase-link">Access Demo</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 1: Advanced Obfuscation</div>
+                <div class="phase-description">
+                    Sophisticated JavaScript obfuscation with string array rotation and control flow flattening.
+                </div>
+                <ul class="phase-techniques">
+                    <li>String array rotation</li>
+                    <li>Control flow flattening</li>
+                    <li>Variable name obfuscation</li>
+                    <li>Dead code injection</li>
+                </ul>
+                <a href="phases/phase1-obfuscation/index.html" class="phase-link">Access Demo</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 2: Cryptographic Validation</div>
+                <div class="phase-description">
+                    Multi-algorithm hash validation with rainbow table and timing attack vulnerabilities.
+                </div>
+                <ul class="phase-techniques">
+                    <li>MD5, SHA-1, SHA-256, bcrypt</li>
+                    <li>Rainbow table attacks</li>
+                    <li>Timing vulnerabilities</li>
+                    <li>Dictionary attacks</li>
+                </ul>
+                <a href="phases/phase2-crypto/index.html" class="phase-link">Access Demo</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 3: Dynamic Security</div>
+                <div class="phase-description">
+                    Time-based tokens, challenge systems, and multi-factor authentication bypasses.
+                </div>
+                <ul class="phase-techniques">
+                    <li>TOTP-like token generation</li>
+                    <li>Challenge system bypassing</li>
+                    <li>Mock 2FA exploitation</li>
+                    <li>Rate limiting evasion</li>
+                </ul>
+                <a href="phases/phase3-dynamic/index.html" class="phase-link">Access Demo</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 4: WebAssembly Analysis</div>
+                <div class="phase-description">
+                    Binary validation modules and WebAssembly reverse engineering challenges.
+                </div>
+                <ul class="phase-techniques">
+                    <li>WASM module analysis</li>
+                    <li>Binary reverse engineering</li>
+                    <li>C/Rust source reconstruction</li>
+                    <li>WASM debugging techniques</li>
+                </ul>
+                <a href="phases/phase4-wasm/index.html" class="phase-link">Coming Soon</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 5: Custom Encoding</div>
+                <div class="phase-description">
+                    XOR-based encryption and multi-layer encoding scheme exploitation.
+                </div>
+                <ul class="phase-techniques">
+                    <li>XOR credential encoding</li>
+                    <li>Multi-layer schemes</li>
+                    <li>DOM-based key derivation</li>
+                    <li>Custom cipher analysis</li>
+                </ul>
+                <a href="phases/phase5-encoding/index.html" class="phase-link">Coming Soon</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 6: Client-Side Encryption</div>
+                <div class="phase-description">
+                    AES implementation analysis with key extraction from various sources.
+                </div>
+                <ul class="phase-techniques">
+                    <li>AES (ECB, CBC, GCM)</li>
+                    <li>Key extraction methods</li>
+                    <li>Symmetric encryption flaws</li>
+                    <li>Side-channel attacks</li>
+                </ul>
+                <a href="phases/phase6-encryption/index.html" class="phase-link">Coming Soon</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 7: Deception Mechanisms</div>
+                <div class="phase-description">
+                    Fake validation functions and hidden logic in unexpected locations.
+                </div>
+                <ul class="phase-techniques">
+                    <li>Multiple fake functions</li>
+                    <li>Hidden logic placement</li>
+                    <li>Environmental dependencies</li>
+                    <li>Red herring detection</li>
+                </ul>
+                <a href="phases/phase7-deception/index.html" class="phase-link">Coming Soon</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 8: Anti-Analysis</div>
+                <div class="phase-description">
+                    Developer tools detection and automated analysis evasion techniques.
+                </div>
+                <ul class="phase-techniques">
+                    <li>DevTools detection</li>
+                    <li>Debugger statements</li>
+                    <li>VM fingerprinting</li>
+                    <li>Automation evasion</li>
+                </ul>
+                <a href="phases/phase8-evasion/index.html" class="phase-link">Coming Soon</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 9: Token Systems</div>
+                <div class="phase-description">
+                    Complex token generation with browser fingerprinting integration.
+                </div>
+                <ul class="phase-techniques">
+                    <li>Complex algorithms</li>
+                    <li>JWT-like implementations</li>
+                    <li>Browser fingerprinting</li>
+                    <li>Token refresh mechanisms</li>
+                </ul>
+                <a href="phases/phase9-tokens/index.html" class="phase-link">Coming Soon</a>
+            </div>
+
+            <div class="phase-item">
+                <div class="phase-title">Phase 10: Full-Stack</div>
+                <div class="phase-description">
+                    Complete security assessment with backend integration and network analysis.
+                </div>
+                <ul class="phase-techniques">
+                    <li>API integration</li>
+                    <li>Network security</li>
+                    <li>Custom protocols</li>
+                    <li>Full-stack assessment</li>
+                </ul>
+                <a href="phases/phase10-fullstack/index.html" class="phase-link">Coming Soon</a>
+            </div>
+        </div>
+
+        <div class="tools-section">
+            <h2 style="color: #4fc3f7; margin-bottom: 15px;">Analysis Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <div class="tool-name">JavaScript Deobfuscator</div>
+                    <div class="tool-description">
+                        Automated analysis of obfuscated JavaScript with string array extraction and control flow analysis.
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-name">Hash Cracking Tool</div>
+                    <div class="tool-description">
+                        Multi-algorithm hash analysis with dictionary, rainbow table, and brute force capabilities.
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-name">Advanced Analyzer</div>
+                    <div class="tool-description">
+                        Comprehensive multi-phase security assessment with automated vulnerability detection.
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-name">Bypass Automation</div>
+                    <div class="tool-description">
+                        Automated credential extraction and authentication bypass for basic implementations.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

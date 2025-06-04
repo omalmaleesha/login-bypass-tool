@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Advanced Obfuscation Demo</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        .phase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .phase-info {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .obfuscation-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .analysis-tools {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 300px;
+            z-index: 1000;
+        }
+        
+        .analysis-tools h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .tool-button {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .tool-button:hover {
+            background: #5a6fd8;
+        }
+        
+        .hint-system {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 350px;
+            z-index: 1000;
+        }
+        
+        .hint {
+            display: none;
+            padding: 10px;
+            background: #e8f4fd;
+            border-left: 3px solid #2196F3;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+        
+        .hint.active {
+            display: block;
+        }
+        
+        .progress-tracker {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .progress-step {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .progress-step.completed {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        
+        .progress-step.active {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .step-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ddd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .progress-step.completed .step-number {
+            background: #4caf50;
+        }
+        
+        .progress-step.active .step-number {
+            background: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="login-box">
+            <div class="logo">
+                <h1>🏦 SecureBank</h1>
+                <p>Advanced Obfuscation Demo</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" id="loginBtn" class="login-btn">
+                    <span id="btnText">Sign In</span>
+                    <div id="spinner" class="spinner" style="display: none;"></div>
+                </button>
+                
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+                <div id="successMessage" class="success-message" style="display: none;"></div>
+            </form>
+            
+            <div class="footer">
+                <p>© 2024 SecureBank. All rights reserved.</p>
+                <p><small>Advanced Obfuscation Demo</small></p>
+            </div>
+        </div>
+        
+        <!-- Hidden dashboard -->
+        <div id="dashboard" class="dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h2>Access Granted</h2>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+            <div class="dashboard-content">
+                <div class="account-summary">
+                    <h3>Authentication Bypassed</h3>
+                    <p>Advanced obfuscation techniques successfully circumvented.</p>
+                </div>
+                <div class="recent-transactions">
+                    <h3>System Access</h3>
+                    <ul>
+                        <li>String array deobfuscation: Complete</li>
+                        <li>Control flow analysis: Complete</li>
+                        <li>Variable mapping: Complete</li>
+                        <li>Credential extraction: Complete</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <script src="auth-obfuscated.js"></script>
+</body>
+</html>
